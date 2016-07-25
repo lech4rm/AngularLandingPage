@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <title>Leo Allen's homepage</title>
+  <meta name="description" content="Hi, I'm Leo. I'm an aspiring web-developer from Chennai.">
+  <meta name="author" content="Leo Allen">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -15,25 +15,104 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
 
-  <!-- CSS & SCRTIPS
+  <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/skeleton.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/font-awesome.min.css" rel="stylesheet" type"text/css">
+  <link href="css/animate.css" rel="stylesheet" type"text/css">
+
+  <!-- Scripts -->
+
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="js/ng-main.js"></script>
+  <script src="js/scripts.js"></script>
+
+
 
   <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  ––––––––––––––––––––––––––––––––––––––––––––––––––
   <link rel="icon" type="image/png" href="images/favicon.png">
-
+-->
 </head>
 <body>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-
+  <div class="mainNav">                                     <!-- navigation -->
+    <nav>                                                    <!-- primary -->
+      <ul>
+        <li><a href="#/about">ABOUT ME</a></li>
+        <li><a href="#/projects">PROJECTS</a></li>
+        <li><a href="#/"><img src="images/4.png"></img></a></li>
+        <li><a id="blog" href="#/blog">BLOG</a></li>
+        <li>
+          <a href="https://twitter.com/LeoAllenRAWR/" target= "_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true">&nbsp;&nbsp;</i></a>
+          <a href="https://github.com/lech4rm" target= "_blank"><i class="fa fa-github fa-lg" aria-hidden="true">&nbsp;&nbsp;</i></a>
+          <a href="https://steamcommunity.com/id/ch4rmnomnom/" target= "_blank"><i class="fa fa-steam fa-lg" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </nav>
   </div>
+
+  <div class="navBanner">                                       <!-- mobile -->
+    <a href="#/"><img src="images/4.png"></img></a>
+    <a id="dropDown"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a>
+  </div>
+  <div class="mobileNav">
+      <ul>
+        <li><a href="#/about">ABOUT ME</a></li>
+        <li><a href="#/projects">PROJECTS</a></li>
+        <li><a id="blog" href="#/blog">BLOG</a></li>
+        <li>
+          <a href="https://twitter.com/LeoAllenRAWR/" target= "_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>&nbsp;
+          <a href="https://github.com/lech4rm" target= "_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>&nbsp;
+          <a href="https://steamcommunity.com/id/ch4rmnomnom/" target= "_blank"><i class="fa fa-steam fa-lg" aria-hidden="true"></i></a>
+        </li>
+
+      </ul>
+  </div>
+
+                                                      <!-- End of navigation -->
+
+  <div class="container">                                 <!-- Main Wrapper -->
+
+
+
+
+    <div class="row wrapper">
+
+      <div ng-view></div>
+
+      <div class="four columns article">
+        <div class ='row badge' ng-controller="GifController">
+          <img id="badgePic" ng-src="{{ currentGif.url }}"></img><br><br>
+          <p> {{ currentGif.msg }} </p>
+          <a id="randomizer" class="button">Randomize!</a>
+        </div><br>
+
+        <div id="twitter" class ='row' ng-controller="blogCtrl">
+          <div class="twitterBadge">TWITTER FEED</div>
+          <a class="twitter-timeline" data-chrome="noheader" data-tweet-limit="5" href="https://twitter.com/LeoAllenRAWR"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+     </div>
+
+   </div>
+                                                              <!-- End of main wrapper -->
+   <div class="row" id="footer">
+     <footer>© Copyright 2016 Leo Allen &nbsp;&nbsp;
+       <a href="https://twitter.com/LeoAllenRAWR/" target= "_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>&nbsp;
+       <a href="https://github.com/lech4rm" target= "_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>&nbsp;
+       <a href="https://steamcommunity.com/id/ch4rmnomnom/" target= "_blank"><i class="fa fa-steam fa-lg" aria-hidden="true"></i></a>
+      </footer>
+   </div>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

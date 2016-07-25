@@ -1,6 +1,7 @@
 //required
 var gulp = require('gulp'),
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify'),
+  nodemon = require('gulp-nodemon');
 
 //tasks
 
