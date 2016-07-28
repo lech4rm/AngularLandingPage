@@ -2,19 +2,6 @@
 (function(){
   var myApp = angular.module('myApp', ['ngRoute']);
 
-  //services
-  /*myApp.service(['GifGrabber', function($http, $q){
-    var deferred = $q.defer();
-    $http.get('js/gifdata.json').then(function(data){
-      deferred.resolve(data);
-    });
-    this.getGifs = function(){
-      return deferred.promise;
-    };
-  }]);*/
-
-
-
   //controllers
 
   myApp.controller('GifController', ['$scope', '$http', function($scope, $http){
