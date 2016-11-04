@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Leo Allen's homepage</title>
+  <title>Super secret admin panel</title>
   <meta name="author" content="Leo Allen">
   <meta name="description" content="Leo Allen. Aspiring web-developer from Chennai.">
   <meta name="keywords" content="leo, allen, web, developer, chennai, gaming, javascript, programming, blog">
@@ -36,11 +36,10 @@
 	<script src="/bower_components/angular/angular.min.js"></script>
   <script src="/bower_components/angular-route/angular-route.min.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
-  <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
   <script src="/js/main.js"></script>
 
 </head>
-<body>
+<body >
 
 
 
@@ -56,10 +55,10 @@
         <div class="mainNav">                                     <!-- navigation -->
           <nav>                                                    <!-- primary -->
             <ul>
-              <li><a href="/#/about">ABOUT ME</a></li>
-              <li><a href="/#/projects">PROJECTS</a></li>
-              <li><a href="/#/"><img src="/images/4.png"></img></a></li>
-              <li><a id="blog" href="/blog">BLOG</a></li>
+              <li><a href="#/about">ABOUT ME</a></li>
+              <li><a href="#/projects">PROJECTS</a></li>
+              <li><a href="#/"><img src="/images/4.png"></img></a></li>
+              <li><a id="blog" href="#/blog">BLOG</a></li>
               <li>
                 <a href="https://twitter.com/LeoAllenRAWR/" target= "_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true">&nbsp;&nbsp;</i></a>
                 <a href="https://github.com/lech4rm" target= "_blank"><i class="fa fa-github fa-lg" aria-hidden="true">&nbsp;&nbsp;</i></a>
@@ -77,7 +76,7 @@
             <ul>
               <li><a href="#/about">ABOUT ME</a></li>
               <li><a href="#/projects">PROJECTS</a></li>
-              <li><a id="blog" href="/blog">BLOG</a></li>
+              <li><a id="blog" href="#/blog">BLOG</a></li>
               <li>
                 <a href="https://twitter.com/LeoAllenRAWR/" target= "_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>&nbsp;
                 <a href="https://github.com/lech4rm" target= "_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>&nbsp;
@@ -103,15 +102,15 @@
       <div class="col-sm-4">
         <aside class="row">
           <div id="gifbadge" class="" ng-controller="GifController">
-            <img class="greyscalify" ng-src="{{currentGif.url}}" alt="Gif image" /><br><br>
+            <img id="fade-img" ng-src="{{currentGif.url}}" alt="Gif image" /><br><br>
             <p style="text-align:center;">{{currentGif.msg}}</p>
-            <a id="randomizer" class="btn btn-default">Randomize!</a>
+            <a class="btn btn-default">Randmize!</a>
 
           </div><br><br>
 
-          <div id="twitter" class="greyscalify">
+          <div id="twitter" class =''>
             <div class="twitterBadge">TWITTER FEED</div>
-            <a class="twitter-timeline greyscalify" data-chrome="noheader" data-tweet-limit="5" href="https://twitter.com/LeoAllenRAWR"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-chrome="noheader" data-tweet-limit="5" href="https://twitter.com/LeoAllenRAWR"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </aside>
 

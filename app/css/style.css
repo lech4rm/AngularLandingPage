@@ -1,22 +1,16 @@
 body{
   font-family: 'Karla', sans-serif;
-  width : 100%;
-  max-width:960px;
-  margin: 0 auto;
-  margin-top: 10rem;
+  padding-top: 20px;
+  line-height: 1.75;
 }
 
-.container{
-    width: 100%;
-    max-width: 960px;
-    min-height: 1000px;
-    margin: 0 auto;
-    padding-bottom: 10rem;
 
+
+.full-width{
+  width: 100%;
 }
-.wrapper{
-  margin-top: 5rem;
-}
+
+
 
 a{
   text-decoration: underline;;
@@ -31,10 +25,18 @@ a{
 
 a:hover{
   text-decoration: underline;
-  color:red
+  color :red;
 }
 
 p{
+
+  font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+p.big{
+  font-size: 16px;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -72,7 +74,7 @@ nav ul li a{
 nav ul li a:hover{
   text-decoration: none;
   font-size: 15px;
-  color: red;
+  top: -5px;
 
 }
 
@@ -84,13 +86,7 @@ nav ul li a img{
   width: 5rem;
 }
 
-.mobileNav{
-  display: none;
-}
 
-.navBanner{
-  display: none;
-}
 
 .fa-bars{
   float: right;
@@ -100,29 +96,19 @@ nav ul li a img{
 }
 
 
-.wrapper{
-  padding:10px;
-}
 
-
-.badge{
+#gifbadge{
   border: 1px solid black;
   border-radius: 10px;
-  padding:15px;
+  padding:20px;
   text-align: center;
 }
 
-.badge > p{
-    text-align: center;
-}
-
-#badgePic{
-  display:block;
-  margin:auto;
+#gifbadge > img {
   height: 150px;
-  width: 150px;
   border-radius: 50%;
 }
+
 
 #twitter{
   border: 1px solid black;
@@ -135,12 +121,7 @@ nav ul li a img{
   font-size: 15px;
 }
 
-.section{
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+
 
 #coverpic{
   display: block;
@@ -179,83 +160,124 @@ nav ul li a img{
   bottom: 0;
 }
 
-#randomizer{
-  text-decoration: none;
-  transition:all 0.25s linear;
-	-webkit-transition:all 0.25s linear;
-  -o-transition:all 0.25s linear;
-  -moz-transition:all 0.25s linear;
-  -ms-transition:all 0.25s linear;
+#views.ng-enter{
+  opacity: 0;
+  transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+
+}
+#views.ng-enter.ng-enter-active{
+  opacity: 1;
 }
 
-#randomizer:hover{
-  color:red;
+
+.greyscalify{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+
 }
 /* le media queries !! */
 
-@media screen and (max-width: 646px) {
+@media screen and (min-width: 768px){
+  .mobileNav{
+    display: none;
+  }
 
-.mainNav{
-  display: none;
-}
-
-.navBanner{
-  display: block;
-  height: 10rem;
-  background: #f7f7f7;
-  padding-top: 1rem;
-
-
-}
-
-.navBanner > a > img{
-  width: 7rem;
-  height: 8rem;
-
-
-  padding-left: 5rem;
-}
-
-.mobileNav{
-  display: block;
-  overflow: hidden;
-  height: 0rem;
-  text-align: center;
-  transition:height 0.2s ease;
-	-webkit-transition:height 0.2s ease;
-  -o-transition:height 0.2s ease;
-  -moz-transition:height 0.2s ease;
-  -ms-transition:height 0.2s ease;
+  .navBanner{
+    display: none;
+  }
+  #main{
+    padding-top: 25px;
+  }
+  #main > .wrapper > .col-sm-4{
+    padding-left:50px;
+  }
+  .container{
+    padding: 75px;
+  }
 
 }
 
-.showNav{
-  height: 15rem;
+@media screen and (max-width: 767px) {
+
+  .mainNav{
+    display: none;
+  }
+
+  .navBanner{
+    display: block;
+    height: 10rem;
+    background: #f7f7f7;
+    padding-top: 1rem;
+
+
+  }
+
+  .navBanner > a > img{
+
+    height: 7rem;
+
+
+    padding-left: 5rem;
+  }
+
+  .mobileNav{
+    display: block;
+    overflow: hidden;
+    height: 0rem;
+    text-align: center;
+    transition:height 0.2s ease;
+  	-webkit-transition:height 0.2s ease;
+    -o-transition:height 0.2s ease;
+    -moz-transition:height 0.2s ease;
+    -ms-transition:height 0.2s ease;
+
+  }
+
+  .showNav{
+    height: 15rem;
+  }
+
+
+
+  .mobileNav > ul{
+    list-style: none;
+    padding: 10px;
+    position: relative;
+
+  }
+
+
+
+  .mobileNav > ul li:hover:not(:nth-child(4)){
+    background: #f2f2f2;
+  }
+
+  .mobileNav > ul li a{
+    text-decoration: none;
+  }
+
+  #dropDown{
+    cursor: pointer;
+  }
+
+
+
 }
 
 
 
-.mobileNav > ul{
-  list-style: none;
-  padding: 10px;
-  position: relative;
-
-}
-
-
-
-.mobileNav > ul li:hover:not(:nth-child(4)){
-  background: #f2f2f2;
-}
-
-.mobileNav > ul li a{
-  text-decoration: none;
-}
-
-#dropDown{
-  cursor: pointer;
-}
-
-
+.particles-wrapper{
+  z-index: 0 !important;
+  position:absolute;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 
 }
